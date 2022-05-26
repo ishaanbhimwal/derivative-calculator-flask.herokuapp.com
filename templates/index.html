@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block body %}
+<br>
+<br>
+<div class="container">
+    <main class="center">
+        <div>Function:</div>
+        <br>
+        <div class="alert">
+            {{ func }}
+        </div>
+        <div class="alert_error">
+            {{ func_error }}
+        </div>
+        <br>
+        <hr>
+        <div>Derivative:</div>
+        <br>
+        <div class="alert">
+            {{ deriv }}
+        </div>
+        <div class="alert_error">
+            {{ deriv_error }}
+        </div>
+        <br>
+        <hr>
+        <div>Plot:</div>
+        <br>
+        <div>
+            <a href="{{ plot }}" download="plot" class="alert_error" onclick="return confirm('Plot download??');"><img
+                    src="{{ plot }}" alt="{{ plot_error }}"></a>
+        </div>
+    </main>
+</div>
+{% endblock %}

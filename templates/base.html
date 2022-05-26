@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derivative Calculator</title>
+    <link href="{{ url_for('static',filename='css/style.css') }}" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}" type="text/javascript"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1><a href="{{ url_for('main') }}" id="header-link">Derivative Calculator by Ishaan Bhimwal</a>
+        </h1>
+        <div id="status">
+            Published: 06/17/2021, Last updated: 07/23/2021
+        </div>
+    </header>
+    <br>
+    <div class="container">
+        <form name="myForm" action="{{ url_for('submit') }}" onkeypress="return AvoidSpace(event)"
+            onsubmit="return validateForm()" method="POST" required>
+            <input type="text" name="input" placeholder="Enter an expression..." autocapitalize="none" autofocus />
+        </form>
+    </div>
+    {% block body %} {% endblock %}
+    <div class="container">
+        <footer>
+            <h2>Instructions for the web version</h2>
+            <div>
+                Use standard Python operators for entering the function.
+            </div>
+            <h2>About Derivative Calculator</h2>
+            <div>
+                Derivative Calculator is a web app written using Python. It
+                uses libraries like SymPy and Matplotlib for computing the derivative of the mathematical
+                function and plotting the graphs. Source code of the project is available in my
+                <a href="https://github.com/ishaanbhimwal/derivative-calculator-flask.herokuapp.com">GitHub
+                    repo</a>.
+                If you have any questions or ideas for improvements to the Derivative Calculator, don't hesitate to
+                <a href="mailto:ishaanbhimwal07@gmail.com">write me an e-mail</a>.
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
